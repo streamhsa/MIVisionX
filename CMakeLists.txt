@@ -25,7 +25,12 @@ set(VERSION "1.3.0")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_INSTALL_PREFIX /opt/rocm/mivisionx)
+if (DEFINED ENV{ROCM_INSTALL_PATH})
+    set (CMAKE_INSTALL_PREFIX $ENV{ROCM_INSTALL_PATH}/mivisionx)
+else ()
+    set (CMAKE_INSTALL_PREFIX /opt/rocm/mivisionx)
+endif()
+# set(CMAKE_INSTALL_PREFIX /opt/rocm/mivisionx)
 
 message("-- MIVisionX Version - ${VERSION}")
 
