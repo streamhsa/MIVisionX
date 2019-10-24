@@ -30,7 +30,6 @@ if (DEFINED ENV{ROCM_INSTALL_PATH})
 else ()
     set (CMAKE_INSTALL_PREFIX /opt/rocm/mivisionx)
 endif()
-# set(CMAKE_INSTALL_PREFIX /opt/rocm/mivisionx)
 
 message("-- MIVisionX Version - ${VERSION}")
 
